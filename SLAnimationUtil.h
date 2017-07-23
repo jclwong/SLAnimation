@@ -26,7 +26,53 @@
 
 + (BOOL) animateAlpha:(float)alpha          view:(UIView *)view time:(float)time callbackTarget:(id)target callbackSelector:(SEL)sel callbackObject:(id)object;
 
-+ (BOOL) animateShakeDistance:(float)dist   view:(UIView *)view time:(float)time callbackTarget:(id)target callbackSelector:(SEL)sel;
+
+#pragma mark - UIEffects
+
+
+// Shake
+
++ (BOOL) shakeWithView:(UIView *)view time:(float)time;
++ (BOOL) shakeWithView:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) shakeWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
+
+// Pop
+
++ (BOOL) popInWithView:(UIView *)view time:(float)time;
++ (BOOL) popInWithView:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) popInWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
++ (BOOL) popOutWithView:(UIView *)view time:(float)time;
++ (BOOL) popOutWithView:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) popOutWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
+
+// Bounce Left
+
++ (BOOL) bounceLeftInWithView:(UIView *)view time:(float)time;
++ (BOOL) bounceLeftInWithView:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) bounceLeftInWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
++ (BOOL) bounceLeftOutWithView:(UIView *)view time:(float)time;
++ (BOOL) bounceLeftOutWithView:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) bounceLeftOutWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
+
+// Bounce Right
+
++ (BOOL) bounceRightInWithView:(UIView *)view time:(float)time;
++ (BOOL) bounceRightInWithView:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) bounceRightInWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
++ (BOOL) bounceRightOutWithView:(UIView *)view time:(float)time;
++ (BOOL) bounceRightOutWithView:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) bounceRightOutWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
+
+
+// Unroll down
+
++ (BOOL) unrollDownInWithView:(UIView *)view time:(float)time;
++ (BOOL) unrollDownInWithView:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) unrollDownInWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
++ (BOOL) unrollDownOutWithView:(UIView *)view time:(float)time;
++ (BOOL) unrollDownOutWithView:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) unrollDownOutWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
+
 
 
 @end

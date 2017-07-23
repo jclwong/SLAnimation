@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(int, UAOptions) {
-    UALinear,
-    UAEaseIn,
-    UAEaseOut,
-    UAEaseInAndOut
+typedef NS_ENUM(int, SLAOptions) {
+    SLALinear,
+    SLAEaseIn,
+    SLAEaseOut,
+    SLAEaseInAndOut
 };
 
 @interface SLAnimation : NSObject

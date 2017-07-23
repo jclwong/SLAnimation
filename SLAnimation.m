@@ -136,10 +136,10 @@
     delay = aDelay;
 }
 - (void) setAnimationOption:(int)option {
-    if (option == UALinear) animationOption = UIViewAnimationOptionCurveLinear;
-    if (option == UAEaseIn) animationOption = UIViewAnimationOptionCurveEaseIn;
-    if (option == UAEaseOut) animationOption = UIViewAnimationOptionCurveEaseOut;
-    if (option == UAEaseInAndOut) animationOption = UIViewAnimationOptionCurveEaseInOut;
+    if (option == SLALinear) animationOption = UIViewAnimationOptionCurveLinear;
+    if (option == SLAEaseIn) animationOption = UIViewAnimationOptionCurveEaseIn;
+    if (option == SLAEaseOut) animationOption = UIViewAnimationOptionCurveEaseOut;
+    if (option == SLAEaseInAndOut) animationOption = UIViewAnimationOptionCurveEaseInOut;
 }
 
 
