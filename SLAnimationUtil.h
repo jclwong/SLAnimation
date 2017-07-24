@@ -45,6 +45,24 @@
 + (BOOL) popOutWithView:(UIView *)view time:(float)time delay:(float)delay;
 + (BOOL) popOutWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
 
+// Slide Left
+
++ (BOOL) slideLeftInWithView:(UIView *)view time:(float)time;
++ (BOOL) slideLeftInWithView:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) slideLeftInWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
++ (BOOL) slideLeftOutWithView:(UIView *)view time:(float)time;
++ (BOOL) slideLeftOutWithView:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) slideLeftOutWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
+
+// Slide Right
+
++ (BOOL) slideRightInWithView:(UIView *)view time:(float)time;
++ (BOOL) slideRightInWithView:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) slideRightInWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
++ (BOOL) slideRightOutWithView:(UIView *)view time:(float)time;
++ (BOOL) slideRightOutWithView:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) slideRightOutWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
+
 // Bounce Left
 
 + (BOOL) bounceLeftInWithView:(UIView *)view time:(float)time;

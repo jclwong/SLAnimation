@@ -138,6 +138,78 @@
 }
 
 
+#pragma mark - Slide Left
+
++ (BOOL) slideLeftInWithView:(UIView *)view time:(float)time {
+    return [self slideLeftInWithView:view time:time delay:0 cbTarget:nil cbSelector:nil];
+}
++ (BOOL) slideLeftInWithView:(UIView *)view time:(float)time delay:(float)delay {
+    return [self slideLeftInWithView:view time:time delay:delay cbTarget:nil cbSelector:nil];
+}
++ (BOOL) slideLeftInWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
+    float sWidth = [UIScreen mainScreen].bounds.size.width;
+    SLAnimation *anim = [self animatorWithView:view delay:delay cbTarget:target cbSelector:selector];
+    [anim setTimes:@(time), nil];
+    [anim setAnimationOption:SLAEaseIn];
+    [anim setCenters:[NSValue valueWithCGPoint:CGPointMake(view.center.x+sWidth, view.center.y)],
+                     [NSValue valueWithCGPoint:view.center], nil];
+    [anim setAlphas:@0, @1, nil];
+    return [anim animate];
+}
+
++ (BOOL) slideLeftOutWithView:(UIView *)view time:(float)time {
+    return [self slideLeftOutWithView:view time:time delay:0 cbTarget:nil cbSelector:nil];
+}
++ (BOOL) slideLeftOutWithView:(UIView *)view time:(float)time delay:(float)delay {
+    return [self slideLeftOutWithView:view time:time delay:delay cbTarget:nil cbSelector:nil];
+}
++ (BOOL) slideLeftOutWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
+    float sWidth = [UIScreen mainScreen].bounds.size.width;
+    SLAnimation *anim = [self animatorWithView:view delay:delay cbTarget:target cbSelector:selector];
+    [anim setTimes:@(time), nil];
+    [anim setAnimationOption:SLAEaseOut];
+    [anim setCenters:[NSValue valueWithCGPoint:view.center],
+                     [NSValue valueWithCGPoint:CGPointMake(view.center.x-sWidth, view.center.y)], nil];
+    [anim setAlphas:@1, @0, nil];
+    return [anim animate];
+}
+
+#pragma mark - Slide Right
+
++ (BOOL) slideRightInWithView:(UIView *)view time:(float)time {
+    return [self slideRightInWithView:view time:time delay:0 cbTarget:nil cbSelector:nil];
+}
++ (BOOL) slideRightInWithView:(UIView *)view time:(float)time delay:(float)delay {
+    return [self slideRightInWithView:view time:time delay:delay cbTarget:nil cbSelector:nil];
+}
++ (BOOL) slideRightInWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
+    float sWidth = [UIScreen mainScreen].bounds.size.width;
+    SLAnimation *anim = [self animatorWithView:view delay:delay cbTarget:target cbSelector:selector];
+    [anim setTimes:@(time), nil];
+    [anim setAnimationOption:SLAEaseIn];
+    [anim setCenters:[NSValue valueWithCGPoint:CGPointMake(view.center.x-sWidth, view.center.y)],
+     [NSValue valueWithCGPoint:view.center], nil];
+    [anim setAlphas:@0, @1, nil];
+    return [anim animate];
+}
+
++ (BOOL) slideRightOutWithView:(UIView *)view time:(float)time {
+    return [self slideRightOutWithView:view time:time delay:0 cbTarget:nil cbSelector:nil];
+}
++ (BOOL) slideRightOutWithView:(UIView *)view time:(float)time delay:(float)delay {
+    return [self slideRightOutWithView:view time:time delay:delay cbTarget:nil cbSelector:nil];
+}
++ (BOOL) slideRightOutWithView:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
+    float sWidth = [UIScreen mainScreen].bounds.size.width;
+    SLAnimation *anim = [self animatorWithView:view delay:delay cbTarget:target cbSelector:selector];
+    [anim setTimes:@(time), nil];
+    [anim setAnimationOption:SLAEaseOut];
+    [anim setCenters:[NSValue valueWithCGPoint:view.center],
+     [NSValue valueWithCGPoint:CGPointMake(view.center.x+sWidth, view.center.y)], nil];
+    [anim setAlphas:@1, @0, nil];
+    return [anim animate];
+}
+
 #pragma mark - Bounce Left
 
 + (BOOL) bounceLeftInWithView:(UIView *)view time:(float)time {
@@ -150,10 +222,9 @@
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     SLAnimation *anim = [self animatorWithView:view delay:delay cbTarget:target cbSelector:selector];
     [anim setTimes:@(time*0.8), @(time*0.2), nil];
-    [anim setAnimationOption:SLAEaseIn];
     [anim setCenters:[NSValue valueWithCGPoint:CGPointMake(view.center.x+sWidth, view.center.y)],
-                     [NSValue valueWithCGPoint:CGPointMake(view.center.x-20, view.center.y)],
-                     [NSValue valueWithCGPoint:view.center], nil];
+     [NSValue valueWithCGPoint:CGPointMake(view.center.x-20, view.center.y)],
+     [NSValue valueWithCGPoint:view.center], nil];
     [anim setAlphas:@0, @1, @1, nil];
     return [anim animate];
 }
@@ -168,10 +239,9 @@
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     SLAnimation *anim = [self animatorWithView:view delay:delay cbTarget:target cbSelector:selector];
     [anim setTimes:@(time*0.2), @(time*0.8), nil];
-    [anim setAnimationOption:SLAEaseOut];
     [anim setCenters:[NSValue valueWithCGPoint:view.center],
-                     [NSValue valueWithCGPoint:CGPointMake(view.center.x+20, view.center.y)],
-                     [NSValue valueWithCGPoint:CGPointMake(view.center.x-sWidth, view.center.y)], nil];
+     [NSValue valueWithCGPoint:CGPointMake(view.center.x+20, view.center.y)],
+     [NSValue valueWithCGPoint:CGPointMake(view.center.x-sWidth, view.center.y)], nil];
     [anim setAlphas:@1, @1, @0, nil];
     return [anim animate];
 }
@@ -188,7 +258,6 @@
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     SLAnimation *anim = [self animatorWithView:view delay:delay cbTarget:target cbSelector:selector];
     [anim setTimes:@(time*0.8), @(time*0.2), nil];
-    [anim setAnimationOption:SLAEaseIn];
     [anim setCenters:[NSValue valueWithCGPoint:CGPointMake(view.center.x-sWidth, view.center.y)],
      [NSValue valueWithCGPoint:CGPointMake(view.center.x+20, view.center.y)],
      [NSValue valueWithCGPoint:view.center], nil];
@@ -206,7 +275,6 @@
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     SLAnimation *anim = [self animatorWithView:view delay:delay cbTarget:target cbSelector:selector];
     [anim setTimes:@(time*0.2), @(time*0.8), nil];
-    [anim setAnimationOption:SLAEaseOut];
     [anim setCenters:[NSValue valueWithCGPoint:view.center],
      [NSValue valueWithCGPoint:CGPointMake(view.center.x-20, view.center.y)],
      [NSValue valueWithCGPoint:CGPointMake(view.center.x+sWidth, view.center.y)], nil];
