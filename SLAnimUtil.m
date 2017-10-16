@@ -149,7 +149,7 @@
 + (SLAnim *) slideLeftIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     [anim setTimes:@[@(time)]];
-    [anim setAnimationOption:SLAEaseIn];
+    [anim setAnimationOption:SLA_TIME_EASE_IN];
     [anim setProp:SLA_PROP_CENTER values:@[[NSValue valueWithCGPoint:CGPointMake(view.center.x+sWidth, view.center.y)], [NSValue valueWithCGPoint:view.center]]];
     [anim setProp:SLA_PROP_ALPHA values:@[@0, @1]];
     return anim;
@@ -158,7 +158,7 @@
 + (SLAnim *) slideLeftOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     [anim setTimes:@[@(time)]];
-    [anim setAnimationOption:SLAEaseOut];
+    [anim setAnimationOption:SLA_TIME_EASE_OUT];
     [anim setProp:SLA_PROP_CENTER values:@[[NSValue valueWithCGPoint:view.center], [NSValue valueWithCGPoint:CGPointMake(view.center.x - sWidth, view.center.y)]]];
     [anim setProp:SLA_PROP_ALPHA values:@[@1, @0]];
     return anim;
@@ -170,7 +170,7 @@
 + (SLAnim *) slideRightIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     [anim setTimes:@[@(time)]];
-    [anim setAnimationOption:SLAEaseIn];
+    [anim setAnimationOption:SLA_TIME_EASE_IN];
     [anim setProp:SLA_PROP_CENTER values:@[[NSValue valueWithCGPoint:CGPointMake(view.center.x-sWidth, view.center.y)],
      [NSValue valueWithCGPoint:view.center]]];
     [anim setProp:SLA_PROP_ALPHA values:@[@0, @1]];
@@ -180,7 +180,7 @@
 + (SLAnim *) slideRightOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     [anim setTimes:@[@(time)]];
-    [anim setAnimationOption:SLAEaseOut];
+    [anim setAnimationOption:SLA_TIME_EASE_OUT];
     [anim setProp:SLA_PROP_CENTER values:@[[NSValue valueWithCGPoint:view.center],
      [NSValue valueWithCGPoint:CGPointMake(view.center.x+sWidth, view.center.y)]]];
     [anim setProp:SLA_PROP_ALPHA values:@[@1, @0]];

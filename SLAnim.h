@@ -10,10 +10,10 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(int, SLAOptions) {
-    SLALinear,
-    SLAEaseIn,
-    SLAEaseOut,
-    SLAEaseInAndOut
+    SLA_TIME_LINEAR,
+    SLA_TIME_EASE_IN,
+    SLA_TIME_EASE_OUT,
+    SLA_TIME_EASE_IN_OUT
 };
 
 typedef NS_ENUM(int, SLAnimProps) {

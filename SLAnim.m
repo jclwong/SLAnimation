@@ -110,19 +110,19 @@
 }
 - (void) setAnimationOption:(int)option {
     switch (option) {
-        case SLALinear:
+        case SLA_TIME_LINEAR:
             _animationOption = UIViewAnimationOptionCurveLinear;
             break;
             
-        case SLAEaseIn:
+        case SLA_TIME_EASE_IN:
             _animationOption = UIViewAnimationOptionCurveEaseIn;
             break;
             
-        case SLAEaseOut:
+        case SLA_TIME_EASE_OUT:
             _animationOption = UIViewAnimationOptionCurveEaseOut;
             break;
             
-        case SLAEaseInAndOut:
+        case SLA_TIME_EASE_IN_OUT:
             _animationOption = UIViewAnimationOptionCurveEaseInOut;
             break;
             
