@@ -9,7 +9,7 @@ Simple and powerful animation library built in Objective-C, compatible with Swif
 
 ---
 
-# SLAnimUtil
+# Class: SLAnimUtil
 Common effects at your finger tips.
 
 ## Effects:
@@ -64,7 +64,7 @@ Common effects at your finger tips.
 
 ---
 
-# SLAnim
+# Class: SLAnim
 Core class for advanced usage
 
 
