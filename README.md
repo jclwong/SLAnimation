@@ -1,7 +1,7 @@
 # SLAnimation
 Simple and powerful animation library built in Objective-C, compatible with Swift.
 
-## Features:
+### Features:
 * Numerous animatable properties
 * Multi-stage animations
 * Callbacks
@@ -9,10 +9,10 @@ Simple and powerful animation library built in Objective-C, compatible with Swif
 
 ---
 
-# Class: SLAnimUtil
+## Class: SLAnimUtil
 Common effects at your finger tips.
 
-## Effects:
+### Effects:
 * Shake
 * Pop (in/out)
 * Slide Left (in/out)
@@ -21,7 +21,7 @@ Common effects at your finger tips.
 * Bounce Right (in/out)
 * Unroll Down (in/out)
 
-## Usage:
+### Usage:
 **Effect: Simple**
 ```objc
 [SLAnimUtil animEffect:SLA_EFFECT_SHAKE view:view time:0.5];
@@ -37,7 +37,7 @@ Common effects at your finger tips.
 [SLAnimUtil animEffect:SLA_EFFECT_SHAKE view:view time:0.5 delay:0.5 cbTarget:self cbSelector:@selector(onAnimateComplete)];
 ```
 
-## Example:
+### Example:
 **Shake**
 
 ![Gif](https://raw.githubusercontent.com/jclwong/SLAnimation/master/readme-assets/sl-effects-shake.gif "Shake")
@@ -64,15 +64,15 @@ Common effects at your finger tips.
 
 ---
 
-# Class: SLAnim
+## Class: SLAnim
 Core class for advanced usage
 
 
-## Compulsary
+### Compulsary
 * View
 * Time
 
-## Animatable Properties:
+### Animatable Properties:
 * Alpha
 * Center
 * Color: Background
@@ -81,12 +81,12 @@ Core class for advanced usage
 * Shadow Opacity
 * Transform X, Transform Y, Transform XY
 
-## Optional
+### Optional
 * Delay
 * Callback (+ Callback Object)
 
 
-## Usage:
+### Usage:
 ```objc
 SLAnimation *anim = [[SLAnimation alloc] init];
 // (Set Compulsary)
