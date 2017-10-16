@@ -52,7 +52,7 @@ Common effects at your finger tips.
 ![Gif](https://raw.githubusercontent.com/jclwong/SLAnimation/master/readme-assets/sl-effects-slide-left-in-out.gif "Slide Left In/Out")
 
 
-**Bounce Left (In/Out)**
+**Bounce Left (In/Out) -> i.e. Slide with a slight spring motion**
 
 ![Gif](https://raw.githubusercontent.com/jclwong/SLAnimation/master/readme-assets/sl-effects-bounce-left-in-out.gif "Bounce Left In/Out")
 
