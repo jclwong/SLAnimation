@@ -7,9 +7,8 @@ Simple and powerful animation library built in Objective-C, compatible with Swif
 * Callbacks
 * Simplified Effects Wrapper
 
----
 
-## Class: SLAnimUtil
+# Class: SLAnimUtil
 Common effects at your finger tips.
 
 ### Effects:
@@ -62,9 +61,8 @@ Common effects at your finger tips.
 ![Gif](https://raw.githubusercontent.com/jclwong/SLAnimation/master/readme-assets/sl-effects-unroll-down-in-out.gif "Unroll Down In/Out")
 
 
----
 
-## Class: SLAnim
+# Class: SLAnim
 Core class for advanced usage
 
 
