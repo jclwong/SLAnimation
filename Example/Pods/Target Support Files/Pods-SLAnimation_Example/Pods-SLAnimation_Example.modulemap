@@ -1,0 +1,6 @@
+framework module Pods_SLAnimation_Example {
+  umbrella header "Pods-SLAnimation_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

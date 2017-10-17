@@ -1,0 +1,6 @@
+framework module SLAnimation {
+  umbrella header "SLAnimation-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - SLAnimation (0.1.0)
+
+DEPENDENCIES:
+  - SLAnimation (from `../`)
+
+EXTERNAL SOURCES:
+  SLAnimation:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SLAnimation: b0b850d9cee06b94c9112c692a4c17a91651c3a6
+
+PODFILE CHECKSUM: a6c335722472526037093794d5f9e0c4f92688a9
+
+COCOAPODS: 1.2.1

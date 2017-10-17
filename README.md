@@ -1,11 +1,21 @@
 # SLAnimation
 Simple and powerful animation library built in Objective-C, compatible with Swift.
 
+
 ### Features:
 * Numerous animatable properties
 * Multi-stage animations
 * Callbacks
 * Simplified Effects Wrapper
+
+## Installation
+
+SLAnimation is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'SLAnimation'
+```
 
 
 # Class: SLAnimUtil
@@ -114,3 +124,12 @@ SLAnimation *anim = [[SLAnimation alloc] initWithView:view];
 [anim setCallbackTarget:self callbackSelector:@selector(onAnimateComplete)];
 [anim animate];
 ```
+
+
+# Author
+
+Jack Wong
+
+# License
+
+SLAnimation is available under the MIT license. See the LICENSE file for more info.

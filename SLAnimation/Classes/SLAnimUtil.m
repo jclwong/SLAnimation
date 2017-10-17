@@ -192,7 +192,7 @@
 + (SLAnim *) bounceLeftIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     [anim setTimes:@[@(time*0.8), @(time*0.2)]];
-    [anim setProp:SLA_PROP_ALPHA values:@[[NSValue valueWithCGPoint:CGPointMake(view.center.x+sWidth, view.center.y)],
+    [anim setProp:SLA_PROP_CENTER values:@[[NSValue valueWithCGPoint:CGPointMake(view.center.x+sWidth, view.center.y)],
      [NSValue valueWithCGPoint:CGPointMake(view.center.x-20, view.center.y)],
      [NSValue valueWithCGPoint:view.center]]];
     [anim setProp:SLA_PROP_ALPHA values:@[@0, @1, @1]];

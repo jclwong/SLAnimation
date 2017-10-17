@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SLAnimation_Example' do
+  pod 'SLAnimation', :path => '../'
+
+  target 'SLAnimation_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
