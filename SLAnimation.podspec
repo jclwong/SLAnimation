@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SLAnimation'
-  s.version          = '1.0.0'
+  s.version          = '1.1'
   s.summary          = 'A Simple and Powerful Animation Library. Written in Obj-C and compatible with Swift'
 
 # This description is used to generate tags and improve search results.
@@ -20,23 +20,24 @@ Pod::Spec.new do |s|
   s.description      = 'A Simple and Powerful Animation Library. Written in Obj-C and compatible with Swift. Features chainable animations, callbacks, and super simple effects wrapper.'
 
   s.homepage         = 'https://github.com/jclwong/SLAnimation'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'jclwong' => 'jackwongau@hotmail.com' }
-  s.source           = { :git => 'https://github.com/jclwong/SLAnimation.git', :commit => '5ef5b156da9d6df23403c06c717558debec33d88', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/jclwong/SLAnimation.git', :commit => '0fa0155eaa6a8879d4b38eb367f374da330848d4', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'SLAnimation/Classes/*.{h,m}'
+
+
+
+  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   # s.source_files = 'SLAnimation/Classes/*'
   # s.source_files = 'SLAnimation/Classes/**/*'
   # s.source_files = 'Classes/**/*.{h,m}'
-
   # s.resource_bundles = {
   #   'SLAnimation' => ['SLAnimation/Assets/*.png']
   # }
-
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
