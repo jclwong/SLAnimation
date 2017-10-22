@@ -77,10 +77,6 @@
             [_properties replaceObjectAtIndex:SLA_PROP_COLOR_BG withObject:values];
             break;
 
-        case SLA_PROP_COLOR_TINT:
-            [_properties replaceObjectAtIndex:SLA_PROP_COLOR_TINT withObject:values];
-            break;
-
         case SLA_PROP_FRAME:
             [_properties replaceObjectAtIndex:SLA_PROP_FRAME withObject:values];
             break;
@@ -189,20 +185,16 @@
     if (property == SLA_PROP_COLOR_BG)
         [_view setBackgroundColor:[[_properties objectAtIndex:property] objectAtIndex:step]];
     
-    if (property == SLA_PROP_COLOR_TINT)
-        [_view setTintColor:[[_properties objectAtIndex:property] objectAtIndex:step]];
-    
     if (property == SLA_PROP_CENTER)
         [_view setCenter:[[[_properties objectAtIndex:property] objectAtIndex:step] CGPointValue]];
     
     if (property == SLA_PROP_FRAME)
         [_view setFrame:[[[_properties objectAtIndex:property] objectAtIndex:step] CGRectValue]];
     
-    if (property == SLA_PROP_SHADOW_OPACITY && step != 0) {
+    if (property == SLA_PROP_SHADOW_OPACITY && step != 0)
         [self setViewShadowOpacityFrom:[[_properties objectAtIndex:property] objectAtIndex:step-1]
                                     to:[[_properties objectAtIndex:property] objectAtIndex:step]
                               duration:[[_times objectAtIndex:step-1] floatValue]];
-    }
     
     if (property == SLA_PROP_TRANSFORM_XY) {
         [_view setTransform:CGAffineTransformIdentity];
@@ -336,7 +328,6 @@
 - (NSString *) nameForProp:(int)prop {
     if (prop == SLA_PROP_ALPHA) return @"Alpha";
     if (prop == SLA_PROP_COLOR_BG) return @"Background Colors";
-    if (prop == SLA_PROP_COLOR_TINT) return @"Tint Colors";
     if (prop == SLA_PROP_CENTER) return @"Centers";
     if (prop == SLA_PROP_FRAME) return @"Frames";
     if (prop == SLA_PROP_SHADOW_OPACITY) return @"ShadowOpacities";

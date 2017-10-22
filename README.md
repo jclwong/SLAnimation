@@ -24,6 +24,8 @@ Common effects at your finger tips.
 ### Effects:
 * Shake
 * Pop (in/out)
+* Rise (in/out)
+* Fall (in/out)
 * Slide Left (in/out)
 * Slide Right (in/out)
 * Bounce Left (in/out)
@@ -55,6 +57,13 @@ Common effects at your finger tips.
 
 ![Gif](https://raw.githubusercontent.com/jclwong/SLAnimation/master/readme-assets/sl-effects-pop-in-out.gif "Pop In/Out")
 
+**Rise (In/Out) -> No string motion **
+
+![Gif](https://raw.githubusercontent.com/jclwong/SLAnimation/master/readme-assets/sl-effects-rise-in-out.gif "Rise In/Out")
+
+**Fall (In/Out) -> No spring motion **
+
+![Gif](https://raw.githubusercontent.com/jclwong/SLAnimation/master/readme-assets/sl-effects-fall-in-out.gif "Fall In/Out")
 
 **Slide Left (In/Out)**
 
@@ -84,7 +93,6 @@ Core class for advanced usage
 * Alpha
 * Center
 * Color: Background
-* Color: Tint
 * Frame
 * Shadow Opacity
 * Transform X, Transform Y, Transform XY

@@ -13,17 +13,17 @@
 
 #pragma mark - Animations: Single Property
 
-+ (BOOL) animProp:(int)prop animValue:(NSValue *)animValue view:(UIView *)view time:(float)time {
++ (BOOL) animProp:(int)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time {
     return [self animProp:prop animValue:animValue view:view time:time delay:0 cbTarget:nil cbSelector:nil cbObject:nil];
 }
-+ (BOOL) animProp:(int)prop animValue:(NSValue *)animValue view:(UIView *)view time:(float)time delay:(float)delay {
++ (BOOL) animProp:(int)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay {
     return [self animProp:prop animValue:animValue view:view time:time delay:delay cbTarget:nil cbSelector:nil cbObject:nil];
 }
-+ (BOOL) animProp:(int)prop animValue:(NSValue *)animValue view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
++ (BOOL) animProp:(int)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
     return [self animProp:prop animValue:animValue view:view time:time delay:delay cbTarget:target cbSelector:selector cbObject:nil];
 }
 
-+ (BOOL) animProp:(int)prop animValue:(NSValue *)animValue
++ (BOOL) animProp:(int)prop animValue:(NSObject *)animValue
              view:(UIView *)view time:(float)time delay:(float)delay
          cbTarget:(id)target cbSelector:(SEL)selector cbObject:(id)cbObject {
     SLAnim *anim = [[SLAnim alloc] initWithView:view times:@[@(time)]];
@@ -38,9 +38,6 @@
         
     } else if (prop == SLA_PROP_COLOR_BG) {
         [anim setProp:SLA_PROP_COLOR_BG values:@[view.backgroundColor, animValue]];
-
-    } else if (prop == SLA_PROP_COLOR_TINT) {
-        [anim setProp:SLA_PROP_COLOR_TINT values:@[view.tintColor, animValue]];
 
     } else if (prop == SLA_PROP_FRAME) {
         [anim setProp:SLA_PROP_FRAME values:@[[NSValue valueWithCGRect:view.frame], animValue]];
@@ -91,6 +88,16 @@
         [self popIn:anim view:view time:time];
     } else if (effect == SLA_EFFECT_POP_OUT) {
         [self popOut:anim view:view time:time];
+
+    } else if (effect == SLA_EFFECT_RISE_IN) {
+        [self riseIn:anim view:view time:time];
+    } else if (effect == SLA_EFFECT_RISE_OUT) {
+        [self riseOut:anim view:view time:time];
+    
+    } else if (effect == SLA_EFFECT_FALL_IN) {
+        [self fallIn:anim view:view time:time];
+    } else if (effect == SLA_EFFECT_FALL_OUT) {
+        [self fallOut:anim view:view time:time];
 
     } else if (effect == SLA_EFFECT_SHAKE) {
         [self shake:anim view:view time:time];
@@ -143,6 +150,37 @@
     return anim;
 }
 
+#pragma mark - Rise
+
++ (SLAnim *) riseIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
+    [anim setTimes:@[@(time)]];
+    [anim setProp:SLA_PROP_ALPHA values:@[@0, @1]];
+    [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@0.3, @1]];
+    return anim;
+}
+
++ (SLAnim *) riseOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
+    [anim setTimes:@[@(time)]];
+    [anim setProp:SLA_PROP_ALPHA values:@[@1, @0]];
+    [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@1, @1.7]];
+    return anim;
+}
+
+#pragma mark - Fall
+
++ (SLAnim *) fallIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
+    [anim setTimes:@[@(time)]];
+    [anim setProp:SLA_PROP_ALPHA values:@[@0, @1]];
+    [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@1.7, @1]];
+    return anim;
+}
+
++ (SLAnim *) fallOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
+    [anim setTimes:@[@(time)]];
+    [anim setProp:SLA_PROP_ALPHA values:@[@1, @0]];
+    [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@1, @0.3]];
+    return anim;
+}
 
 #pragma mark - Slide Left
 
