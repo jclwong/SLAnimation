@@ -96,7 +96,11 @@
         case SLA_PROP_TRANSFORM_Y:
             [_properties replaceObjectAtIndex:SLA_PROP_TRANSFORM_Y withObject:values];
             break;
-            
+
+        case SLA_PROP_ROTATE:
+            [_properties replaceObjectAtIndex:SLA_PROP_ROTATE withObject:values];
+            break;
+
         default:
             break;
     }
@@ -209,6 +213,11 @@
     if (property == SLA_PROP_TRANSFORM_X) {
         [_view setTransform:CGAffineTransformIdentity];
         [_view setTransform:CGAffineTransformMakeScale([[[_properties objectAtIndex:property] objectAtIndex:step] doubleValue]+0.0001, 1)];
+    }
+    
+    if (property == SLA_PROP_ROTATE) {
+        [_view setTransform:CGAffineTransformIdentity];
+        [_view setTransform:CGAffineTransformMakeRotation([[[_properties objectAtIndex:property] objectAtIndex:step] doubleValue])];
     }
 
 }

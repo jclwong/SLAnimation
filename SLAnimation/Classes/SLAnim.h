@@ -25,6 +25,7 @@ typedef NS_ENUM(int, SLAnimProps) {
     SLA_PROP_TRANSFORM_X,
     SLA_PROP_TRANSFORM_Y,
     SLA_PROP_TRANSFORM_XY,
+    SLA_PROP_ROTATE,
     
     SLA_PROP_COUNT
 };

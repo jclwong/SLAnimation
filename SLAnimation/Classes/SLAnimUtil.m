@@ -53,7 +53,11 @@
         
     } else if (prop == SLA_PROP_TRANSFORM_XY) {
         [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@(view.transform.a), animValue]];   // a(x) == d(y)
+
+    } else if (prop == SLA_PROP_ROTATE) {
+        [anim setProp:SLA_PROP_ROTATE values:@[@(0), animValue]];
     }
+    
     return [anim animate];
 }
 

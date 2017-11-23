@@ -44,15 +44,15 @@
 		3430599F6C41747A18934FFAF3F877C2 /* SLAnimation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SLAnimation-umbrella.h"; sourceTree = "<group>"; };
 		34FDBE63B90730059F67B4A90F705BF8 /* SLAnimation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SLAnimation.xcconfig; sourceTree = "<group>"; };
 		3841569A76627D968D4FC48C745260AC /* Pods-SLAnimation_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLAnimation_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		4DBCEC09B63A4D6E959ED09D540036AB /* Pods-SLAnimation_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SLAnimation_Example.modulemap"; sourceTree = "<group>"; };
+		4DBCEC09B63A4D6E959ED09D540036AB /* Pods-SLAnimation_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SLAnimation_Example.modulemap"; sourceTree = "<group>"; };
 		55A1A1B09D9CDA7184531233261515E5 /* Pods-SLAnimation_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLAnimation_Example-frameworks.sh"; sourceTree = "<group>"; };
 		6334147AC454420846B5E450E90574DF /* Pods-SLAnimation_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLAnimation_Tests-umbrella.h"; sourceTree = "<group>"; };
-		6579C8A9846B3E00C3430299D897DB87 /* Pods_SLAnimation_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SLAnimation_Tests.framework; path = "Pods-SLAnimation_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6579C8A9846B3E00C3430299D897DB87 /* Pods_SLAnimation_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLAnimation_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		66F27DC847FF1C299079A8F6389430AF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B168D1C5498C95897A94CC301AE6551 /* Pods-SLAnimation_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SLAnimation_Example-umbrella.h"; sourceTree = "<group>"; };
 		7293C0F6016DFB94B678368CF1A92531 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75EB6048EDCB7B723B2FF0BD70AEC9DE /* Pods-SLAnimation_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SLAnimation_Tests.modulemap"; sourceTree = "<group>"; };
+		75EB6048EDCB7B723B2FF0BD70AEC9DE /* Pods-SLAnimation_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SLAnimation_Tests.modulemap"; sourceTree = "<group>"; };
 		7E1E0376E96EB181BA3B48CAB3826AD0 /* Pods-SLAnimation_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SLAnimation_Tests-dummy.m"; sourceTree = "<group>"; };
 		80F877B46B43D91C9256B4492461A3C7 /* Pods-SLAnimation_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SLAnimation_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		8494EB8AFCC9214C96D13AEB820CDB3A /* SLAnimUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SLAnimUtil.m; sourceTree = "<group>"; };
@@ -60,13 +60,13 @@
 		86EA840BD7271C77FC833E746ADB17C9 /* Pods-SLAnimation_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SLAnimation_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8DE9BDC977CA52638E3760A93C740E28 /* Pods-SLAnimation_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLAnimation_Example-resources.sh"; sourceTree = "<group>"; };
 		91D3BFDB83CB65C6083CB81BDF2179A5 /* Pods-SLAnimation_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SLAnimation_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		965A69196B94BE52C595ACB850CC28AF /* SLAnimation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SLAnimation-prefix.pch"; sourceTree = "<group>"; };
 		9713E4471A613EBCB4EC1DAACDF0F914 /* Pods-SLAnimation_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLAnimation_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		A428BBFD70983225DA5F42AA6845F9AD /* Pods-SLAnimation_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SLAnimation_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B300F3411D5CFEE0D9E933C034988000 /* SLAnimation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SLAnimation.modulemap; sourceTree = "<group>"; };
-		D5E3FC648478BACA20E65EF94329E015 /* Pods_SLAnimation_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SLAnimation_Example.framework; path = "Pods-SLAnimation_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3E0EC9E5FE2693D88D24AFE86014E62 /* SLAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SLAnimation.framework; path = SLAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B300F3411D5CFEE0D9E933C034988000 /* SLAnimation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SLAnimation.modulemap; sourceTree = "<group>"; };
+		D5E3FC648478BACA20E65EF94329E015 /* Pods_SLAnimation_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLAnimation_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3E0EC9E5FE2693D88D24AFE86014E62 /* SLAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SLAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2CA4AB1679C2E89F371FEF9E96DE313 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,7 +176,6 @@
 				2048BB7B62DEDB7A5214E2A17547A0B0 /* SLAnimUtil.h */,
 				8494EB8AFCC9214C96D13AEB820CDB3A /* SLAnimUtil.m */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -203,7 +202,6 @@
 			children = (
 				8DEAA299932CE2B2B0BE212855A6DEA1 /* Classes */,
 			);
-			name = SLAnimation;
 			path = SLAnimation;
 			sourceTree = "<group>";
 		};

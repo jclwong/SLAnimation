@@ -57,11 +57,11 @@ Common effects at your finger tips.
 
 ![Gif](https://raw.githubusercontent.com/jclwong/SLAnimation/master/readme-assets/sl-effects-pop-in-out.gif "Pop In/Out")
 
-**Rise (In/Out) -> No string motion **
+**Rise (In/Out) -> No spring motion**
 
 ![Gif](https://raw.githubusercontent.com/jclwong/SLAnimation/master/readme-assets/sl-effects-rise-in-out.gif "Rise In/Out")
 
-**Fall (In/Out) -> No spring motion **
+**Fall (In/Out) -> No spring motion**
 
 ![Gif](https://raw.githubusercontent.com/jclwong/SLAnimation/master/readme-assets/sl-effects-fall-in-out.gif "Fall In/Out")
 

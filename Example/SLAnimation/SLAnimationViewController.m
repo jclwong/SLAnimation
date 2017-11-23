@@ -11,7 +11,6 @@
 #import <SLAnimation/SLAnim.h>
 #import <SLAnimation/SLAnimUtil.h>
 
-
 @interface SLAnimationViewController () {
     UIImageView *view;
 }
@@ -51,13 +50,14 @@
     //    [SLAnimUtil animEffect:SLA_EFFECT_SLIDE_LEFT_IN view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateChain)];
     //    [SLAnimUtil animEffect:SLA_EFFECT_BOUNCE_LEFT_IN view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateChain)];
     //    [SLAnimUtil animEffect:SLA_EFFECT_UNROLL_DOWN_IN view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateChain)];
-//    [SLAnimUtil animEffect:SLA_EFFECT_FALL_IN view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateChain)];
-//    [SLAnimUtil animEffect:SLA_EFFECT_RISE_IN view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateChain)];
+    //    [SLAnimUtil animEffect:SLA_EFFECT_FALL_IN view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateChain)];
+    //    [SLAnimUtil animEffect:SLA_EFFECT_RISE_IN view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateChain)];
     
     // Props
     //    [SLAnimUtil animProp:SLA_PROP_ALPHA animValue:@0.5 view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateComplete)];
     //    [SLAnimUtil animProp:SLA_PROP_COLOR_BG animValue:[UIColor redColor] view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateComplete)];
-    
+    //    [SLAnimUtil animProp:SLA_PROP_ROTATE animValue:@(-0.5) view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateComplete)];
+
 }
 
 - (void) onAnimateChain {
@@ -65,8 +65,8 @@
     //    [SLAnimUtil animEffect:SLA_EFFECT_SLIDE_LEFT_OUT view:view time:0.4 delay:0.5 cbTarget:self cbSelector:@selector(onAnimateComplete)];
     //    [SLAnimUtil animEffect:SLA_EFFECT_BOUNCE_LEFT_OUT view:view time:0.4 delay:0.5 cbTarget:self cbSelector:@selector(onAnimateComplete)];
     //    [SLAnimUtil animEffect:SLA_EFFECT_UNROLL_DOWN_OUT view:view time:0.4 delay:0.5 cbTarget:self cbSelector:@selector(onAnimateComplete)];
-//    [SLAnimUtil animEffect:SLA_EFFECT_FALL_OUT view:view time:0.4 delay:0.5 cbTarget:self cbSelector:@selector(onAnimateComplete)];
-//    [SLAnimUtil animEffect:SLA_EFFECT_RISE_OUT view:view time:0.4 delay:0.5 cbTarget:self cbSelector:@selector(onAnimateComplete)];
+    //    [SLAnimUtil animEffect:SLA_EFFECT_FALL_OUT view:view time:0.4 delay:0.5 cbTarget:self cbSelector:@selector(onAnimateComplete)];
+    //    [SLAnimUtil animEffect:SLA_EFFECT_RISE_OUT view:view time:0.4 delay:0.5 cbTarget:self cbSelector:@selector(onAnimateComplete)];
 }
 
 - (void) onAnimateComplete {
