@@ -113,19 +113,16 @@
         case SLA_TIME_LINEAR:
             _animationOption = UIViewAnimationOptionCurveLinear;
             break;
-            
         case SLA_TIME_EASE_IN:
+            NSLog(@"Set to ease in!");
             _animationOption = UIViewAnimationOptionCurveEaseIn;
             break;
-            
         case SLA_TIME_EASE_OUT:
             _animationOption = UIViewAnimationOptionCurveEaseOut;
             break;
-            
         case SLA_TIME_EASE_IN_OUT:
             _animationOption = UIViewAnimationOptionCurveEaseInOut;
             break;
-            
         default:
             break;
     }
@@ -215,9 +212,8 @@
         [_view setTransform:CGAffineTransformMakeScale([[[_properties objectAtIndex:property] objectAtIndex:step] doubleValue]+0.0001, 1)];
     }
     
-    if (property == SLA_PROP_ROTATE) {
-        [_view setTransform:CGAffineTransformIdentity];
-        [_view setTransform:CGAffineTransformMakeRotation([[[_properties objectAtIndex:property] objectAtIndex:step] doubleValue])];
+    if (property == SLA_PROP_ROTATE && step != 0) {
+        [self setViewRotation:[[_properties objectAtIndex:property] objectAtIndex:step] duration:[[_times objectAtIndex:step-1] floatValue]];
     }
 
 }
@@ -229,6 +225,32 @@
     anim.duration = duration;
     [_view.layer addAnimation:anim forKey:@"shadowOpacity"];
 }
+- (void) setViewRotation:(NSValue *)value duration:(float)duration {
+
+    CALayer *currentLayer = (CALayer *)[_view.layer presentationLayer];
+    NSValue *from = (NSNumber *)[currentLayer valueForKeyPath:@"transform.rotation.z"];
+    NSValue *to = value;
+//    float valueFloat = [((NSNumber*)value) floatValue];
+//    if (valueFloat > M_PI) {
+//        to = @(valueFloat - 2*M_PI);
+//    }
+
+
+    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    anim.fromValue = from;
+    anim.toValue = to;
+    anim.duration = duration;
+    anim.fillMode = kCAFillModeForwards;
+    anim.removedOnCompletion = NO;
+    anim.timingFunction = [self viewAnimationCurveToCoreAnimationTiming:_animationOption];
+    [_view.layer addAnimation:anim forKey:@"rotation"];
+    
+    
+    NSLog(@"[SLAnim] from: %@", from);
+    NSLog(@"[SLAnim] to: %@", to);
+    NSLog(@"[SLAnim] M_PI: %f", M_PI);
+}
+
 
 - (BOOL) canAnimate {
     if (_isAnimating) {
@@ -356,5 +378,13 @@
     va_end(args);
     printf("\n");
 }
+- (CAMediaTimingFunction *) viewAnimationCurveToCoreAnimationTiming:(UIViewAnimationOptions)curve {
+    NSString *caMediaTiming = kCAMediaTimingFunctionLinear;
+    if (curve == UIViewAnimationOptionCurveEaseIn) caMediaTiming = kCAMediaTimingFunctionEaseIn;
+    if (curve == UIViewAnimationOptionCurveEaseOut) caMediaTiming = kCAMediaTimingFunctionEaseOut;
+    if (curve == UIViewAnimationOptionCurveEaseInOut) caMediaTiming = kCAMediaTimingFunctionEaseInEaseOut;
+    return [CAMediaTimingFunction functionWithName:caMediaTiming];
+}
+
 
 @end

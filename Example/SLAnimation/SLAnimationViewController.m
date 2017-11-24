@@ -13,6 +13,7 @@
 
 @interface SLAnimationViewController () {
     UIImageView *view;
+    float angle;
 }
 @end
 
@@ -21,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
+    
+    angle = 0;
     
     view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"apple.png"]];
     view.layer.cornerRadius = 5;
@@ -56,7 +59,20 @@
     // Props
     //    [SLAnimUtil animProp:SLA_PROP_ALPHA animValue:@0.5 view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateComplete)];
     //    [SLAnimUtil animProp:SLA_PROP_COLOR_BG animValue:[UIColor redColor] view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateComplete)];
-    //    [SLAnimUtil animProp:SLA_PROP_ROTATE animValue:@(-0.5) view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateComplete)];
+    
+    
+    NSLog(@"view.transform.a: %.3f", view.transform.a);
+    NSLog(@"view.transform.b: %.3f", view.transform.b);
+    NSLog(@"view.transform.c: %.3f", view.transform.c);
+    NSLog(@"view.transform.d: %.3f", view.transform.d);
+    NSLog(@"Current Calculated angle: %.3f", atan2f(view.transform.b, view.transform.a));
+
+    
+    // Angle Test
+//    CGFloat radiansFrom = (angle) / 180 * M_PI;
+//    CGFloat radiansTo = (angle+15) / 180 * M_PI;
+//    [SLAnimUtil animProp:SLA_PROP_ROTATE animValue:@(radiansTo) view:view time:0.5 delay:0 cbTarget:self cbSelector:@selector(onAnimateComplete)];
+//    angle = angle+15;
 
 }
 
@@ -70,6 +86,8 @@
 }
 
 - (void) onAnimateComplete {
+    NSLog(@"onAnimateComplete");
+    
     [self performSelector:@selector(animate) withObject:nil afterDelay:1];
 }
 @end
