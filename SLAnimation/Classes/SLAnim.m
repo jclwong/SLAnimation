@@ -226,29 +226,17 @@
     [_view.layer addAnimation:anim forKey:@"shadowOpacity"];
 }
 - (void) setViewRotation:(NSValue *)value duration:(float)duration {
-
     CALayer *currentLayer = (CALayer *)[_view.layer presentationLayer];
     NSValue *from = (NSNumber *)[currentLayer valueForKeyPath:@"transform.rotation.z"];
-    NSValue *to = value;
-//    float valueFloat = [((NSNumber*)value) floatValue];
-//    if (valueFloat > M_PI) {
-//        to = @(valueFloat - 2*M_PI);
-//    }
-
 
     CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     anim.fromValue = from;
-    anim.toValue = to;
+    anim.toValue = value;
     anim.duration = duration;
     anim.fillMode = kCAFillModeForwards;
     anim.removedOnCompletion = NO;
     anim.timingFunction = [self viewAnimationCurveToCoreAnimationTiming:_animationOption];
     [_view.layer addAnimation:anim forKey:@"rotation"];
-    
-    
-    NSLog(@"[SLAnim] from: %@", from);
-    NSLog(@"[SLAnim] to: %@", to);
-    NSLog(@"[SLAnim] M_PI: %f", M_PI);
 }
 
 
