@@ -56,7 +56,6 @@
 
     } else if (prop == SLA_PROP_ROTATE) {
         CGFloat radians = atan2f(view.transform.b, view.transform.a);
-        CGFloat degrees = radians * (180 / M_PI);
         [anim setProp:SLA_PROP_ROTATE values:@[@(radians), animValue]];
     }
     
