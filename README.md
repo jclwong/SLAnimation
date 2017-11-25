@@ -104,7 +104,7 @@ Core class for advanced usage
 
 ### Usage:
 ```objc
-SLAnimation *anim = [[SLAnimation alloc] init];
+SLAnim *anim = [[SLAnim alloc] init];
 // (Set Compulsary)
 // (Set Animation Properties)
 // (Set Optionals)

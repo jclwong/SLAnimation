@@ -55,19 +55,8 @@
         [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@(view.transform.a), animValue]];   // a(x) == d(y)
 
     } else if (prop == SLA_PROP_ROTATE) {
-        
-        NSLog(@"[SLAnimUtil] transform.a: %.3f", view.transform.a);
-        NSLog(@"[SLAnimUtil] transform.b: %.3f", view.transform.b);
-        NSLog(@"[SLAnimUtil] transform.c: %.3f", view.transform.c);
-        NSLog(@"[SLAnimUtil] transform.d: %.3f", view.transform.d);
-
         CGFloat radians = atan2f(view.transform.b, view.transform.a);
         CGFloat degrees = radians * (180 / M_PI);
-        NSLog(@"view.transform.a: %.3f", view.transform.a);
-        NSLog(@"view.transform.b: %.3f", view.transform.b);
-        NSLog(@"radians: %.3f", radians);
-        NSLog(@"degrees: %.3f", degrees);
-        NSLog(@"animValue: %@", animValue);
         [anim setProp:SLA_PROP_ROTATE values:@[@(radians), animValue]];
     }
     

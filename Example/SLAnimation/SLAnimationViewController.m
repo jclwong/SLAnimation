@@ -27,6 +27,7 @@
     
     view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"apple.png"]];
     view.layer.cornerRadius = 5;
+    view.layer.anchorPoint = CGPointMake(0,0);
     [self.view addSubview:view];
     
     [self performSelector:@selector(animate) withObject:nil afterDelay:0.5];

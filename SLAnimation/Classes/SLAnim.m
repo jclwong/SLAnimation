@@ -114,7 +114,6 @@
             _animationOption = UIViewAnimationOptionCurveLinear;
             break;
         case SLA_TIME_EASE_IN:
-            NSLog(@"Set to ease in!");
             _animationOption = UIViewAnimationOptionCurveEaseIn;
             break;
         case SLA_TIME_EASE_OUT:
