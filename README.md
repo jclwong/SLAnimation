@@ -31,6 +31,8 @@ Common effects at your finger tips.
 * Bounce Left (in/out)
 * Bounce Right (in/out)
 * Unroll Down (in/out)
+* Fade Down (in/out)
+* Fade Up (in/out)
 
 ### Usage:
 **Effect: Simple**
@@ -79,6 +81,9 @@ Common effects at your finger tips.
 
 ![Gif](https://raw.githubusercontent.com/jclwong/SLAnimation/master/readme-assets/sl-effects-unroll-down-in-out.gif "Unroll Down In/Out")
 
+**Fade Down (In/Out) -> Small vertical displacement, with fade **
+
+**Fade Up (In/Out) -> Small vertical displacement, with fade **
 
 
 # Class: SLAnim
@@ -126,7 +131,7 @@ SLAnim *anim = [[SLAnim alloc] initWithView:view];
 * Fade Out Slow
 * Optional: Trigger callbacks
 ```objc
-SLAnimation *anim = [[SLAnimation alloc] initWithView:view];
+SLAnim *anim = [[SLAnim alloc] initWithView:view];
 [anim setTimes:@[@(0.1), @(0.4)]];
 [anim setProp:SLA_PROP_ALPHA values:@[@0, @1, @0]];
 [anim setCallbackTarget:self callbackSelector:@selector(onAnimateComplete)];

@@ -28,6 +28,11 @@ typedef NS_ENUM(int, SLAnimEffects) {
     SLA_EFFECT_BOUNCE_RIGHT_OUT,
     SLA_EFFECT_UNROLL_DOWN_IN,
     SLA_EFFECT_UNROLL_DOWN_OUT,
+    
+    SLA_EFFECT_FADE_DOWN_IN,
+    SLA_EFFECT_FADE_DOWN_OUT,
+    SLA_EFFECT_FADE_UP_IN,
+    SLA_EFFECT_FADE_UP_OUT
 };
 
 + (BOOL) animProp:(int)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time;

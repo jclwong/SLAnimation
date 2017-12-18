@@ -121,6 +121,17 @@
         [self unrollDownIn:anim view:view time:time];
     } else if (effect == SLA_EFFECT_UNROLL_DOWN_OUT) {
         [self unrollDownOut:anim view:view time:time];
+
+    } else if (effect == SLA_EFFECT_FADE_DOWN_IN) {
+        [self fadeDownIn:anim view:view time:time];
+    } else if (effect == SLA_EFFECT_FADE_DOWN_OUT) {
+        [self fadeDownOut:anim view:view time:time];
+
+    } else if (effect == SLA_EFFECT_FADE_UP_IN) {
+        [self fadeUpIn:anim view:view time:time];
+    } else if (effect == SLA_EFFECT_FADE_UP_OUT) {
+        [self fadeUpOut:anim view:view time:time];
+
     }
     return [anim animate];
 }
@@ -296,5 +307,51 @@
     return anim;
 }
 
+#pragma mark - Fade Down
 
++ (SLAnim *) fadeDownIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
+    CGPoint c = view.center;
+    CGSize s = view.frame.size;
+    [anim setTimes:@[@(time*0.8), @(time*0.2)]];
+    [anim setProp:SLA_PROP_ALPHA values:@[@0, @0.7, @1]];
+    [anim setProp:SLA_PROP_CENTER values: @[[NSValue valueWithCGPoint:CGPointMake(c.x, c.y - s.height/2)],
+                                           [NSValue valueWithCGPoint:CGPointMake(c.x, c.y + s.height/5)],
+                                           [NSValue valueWithCGPoint:c]]];
+    return anim;
+}
+
++ (SLAnim *) fadeDownOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
+    CGPoint c = view.center;
+    CGSize s = view.frame.size;
+    [anim setTimes:@[@(time*0.2), @(time*0.8)]];
+    [anim setProp:SLA_PROP_ALPHA values:@[@1, @0.7, @0]];
+    [anim setProp:SLA_PROP_CENTER values: @[[NSValue valueWithCGPoint:CGPointMake(c.x, c.y)],
+                                            [NSValue valueWithCGPoint:CGPointMake(c.x, c.y - s.height/5)],
+                                            [NSValue valueWithCGPoint:CGPointMake(c.x, c.y + s.height/2)]]];
+    return anim;
+}
+
+#pragma mark - Fade Up
+
++ (SLAnim *) fadeUpIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
+    CGPoint c = view.center;
+    CGSize s = view.frame.size;
+    [anim setTimes:@[@(time*0.8), @(time*0.2)]];
+    [anim setProp:SLA_PROP_ALPHA values:@[@0, @0.7, @1]];
+    [anim setProp:SLA_PROP_CENTER values: @[[NSValue valueWithCGPoint:CGPointMake(c.x, c.y + s.height/2)],
+                                            [NSValue valueWithCGPoint:CGPointMake(c.x, c.y - s.height/5)],
+                                            [NSValue valueWithCGPoint:c]]];
+    return anim;
+}
+
++ (SLAnim *) fadeUpOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
+    CGPoint c = view.center;
+    CGSize s = view.frame.size;
+    [anim setTimes:@[@(time*0.2), @(time*0.8)]];
+    [anim setProp:SLA_PROP_ALPHA values:@[@1, @0.7, @0]];
+    [anim setProp:SLA_PROP_CENTER values: @[[NSValue valueWithCGPoint:CGPointMake(c.x, c.y)],
+                                            [NSValue valueWithCGPoint:CGPointMake(c.x, c.y + s.height/5)],
+                                            [NSValue valueWithCGPoint:CGPointMake(c.x, c.y - s.height/2)]]];
+    return anim;
+}
 @end
