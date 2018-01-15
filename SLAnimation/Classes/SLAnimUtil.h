@@ -10,7 +10,7 @@
 
 @interface SLAnimUtil : NSObject
 
-typedef NS_ENUM(int, SLAnimEffects) {
+typedef NS_ENUM(NSUInteger, SLAnimEffects) {
     SLA_EFFECT_SHAKE,
     SLA_EFFECT_POP_IN,          
     SLA_EFFECT_POP_OUT,

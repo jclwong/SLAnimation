@@ -1,6 +1,10 @@
 All notable changes to this project will be documented in this file.
 
-## [1.4] 2017-11-25
+## [1.4.1] 2018-01-15
+### Changed
+- ENUMS to use "NSUInteger" instead of "int"
+
+## [1.4] 2017-12-19
 ### Added
 - Added Effects: Fade Down
 - Added Effects: Fade Up

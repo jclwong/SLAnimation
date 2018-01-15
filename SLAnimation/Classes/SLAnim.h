@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(int, SLAOptions) {
+typedef NS_ENUM(NSUInteger, SLAOptions) {
     SLA_TIME_LINEAR,
     SLA_TIME_EASE_IN,
     SLA_TIME_EASE_OUT,
     SLA_TIME_EASE_IN_OUT
 };
 
-typedef NS_ENUM(int, SLAnimProps) {
+typedef NS_ENUM(NSUInteger, SLAnimProps) {
     SLA_PROP_ALPHA,
     SLA_PROP_CENTER,
     SLA_PROP_COLOR_BG,
