@@ -35,15 +35,15 @@ typedef NS_ENUM(NSUInteger, SLAnimEffects) {
     SLA_EFFECT_FADE_UP_OUT
 };
 
-+ (BOOL) animProp:(int)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time;
-+ (BOOL) animProp:(int)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay;
-+ (BOOL) animProp:(int)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
-+ (BOOL) animProp:(int)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector cbObject:(id)cbObject;
++ (BOOL) animProp:(NSUInteger)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time;
++ (BOOL) animProp:(NSUInteger)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) animProp:(NSUInteger)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
++ (BOOL) animProp:(NSUInteger)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector cbObject:(id)cbObject;
 
-+ (BOOL) animEffect:(int)effect view:(UIView *)view time:(float)time;
-+ (BOOL) animEffect:(int)effect view:(UIView *)view time:(float)time delay:(float)delay;
-+ (BOOL) animEffect:(int)effect view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
-+ (BOOL) animEffect:(int)effect view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector cbObject:(id)cbObject;
++ (BOOL) animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time;
++ (BOOL) animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time delay:(float)delay;
++ (BOOL) animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector;
++ (BOOL) animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector cbObject:(id)cbObject;
 
 
 @end

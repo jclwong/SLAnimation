@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'SLAnimation'
-  spec.version      = '1.4.1'
+  spec.version      = '1.4.2'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/jclwong/SLAnimation'
   spec.authors      = { 'jclwong' => 'jackwongau@hotmail.com' }

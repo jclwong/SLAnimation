@@ -1,8 +1,8 @@
 All notable changes to this project will be documented in this file.
 
-## [1.4.1] 2018-01-15
+## [1.4.2] 2018-01-15
 ### Changed
-- ENUMS to use "NSUInteger" instead of "int"
+- Animation properties to use "NSUInteger" instead of "int" for Swift compatibility.
 
 ## [1.4] 2017-12-19
 ### Added

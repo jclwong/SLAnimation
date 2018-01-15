@@ -63,7 +63,7 @@
     _times = times;
 }
 
-- (void)setProp:(int)prop values:(NSArray *)values {
+- (void)setProp:(NSUInteger)prop values:(NSArray *)values {
     switch (prop) {
         case SLA_PROP_ALPHA:
             [_properties replaceObjectAtIndex:SLA_PROP_ALPHA withObject: values];
@@ -108,7 +108,7 @@
 - (void) setDelay:(float)aDelay {
     _delay = aDelay;
 }
-- (void) setAnimationOption:(int)option {
+- (void) setAnimationOption:(NSUInteger)option {
     switch (option) {
         case SLA_TIME_LINEAR:
             _animationOption = UIViewAnimationOptionCurveLinear;

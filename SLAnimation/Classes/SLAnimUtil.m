@@ -13,17 +13,17 @@
 
 #pragma mark - Animations: Single Property
 
-+ (BOOL) animProp:(int)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time {
++ (BOOL) animProp:(NSUInteger)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time {
     return [self animProp:prop animValue:animValue view:view time:time delay:0 cbTarget:nil cbSelector:nil cbObject:nil];
 }
-+ (BOOL) animProp:(int)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay {
++ (BOOL) animProp:(NSUInteger)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay {
     return [self animProp:prop animValue:animValue view:view time:time delay:delay cbTarget:nil cbSelector:nil cbObject:nil];
 }
-+ (BOOL) animProp:(int)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
++ (BOOL) animProp:(NSUInteger)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
     return [self animProp:prop animValue:animValue view:view time:time delay:delay cbTarget:target cbSelector:selector cbObject:nil];
 }
 
-+ (BOOL) animProp:(int)prop animValue:(NSObject *)animValue
++ (BOOL) animProp:(NSUInteger)prop animValue:(NSObject *)animValue
              view:(UIView *)view time:(float)time delay:(float)delay
          cbTarget:(id)target cbSelector:(SEL)selector cbObject:(id)cbObject {
     SLAnim *anim = [[SLAnim alloc] initWithView:view times:@[@(time)]];
@@ -65,16 +65,16 @@
 
 #pragma mark - Animation: Effects
 
-+ (BOOL) animEffect:(int)effect view:(UIView *)view time:(float)time {
++ (BOOL) animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time {
     return [self animEffect:effect view:view time:time delay:0 cbTarget:nil cbSelector:nil cbObject:nil];
 }
-+ (BOOL) animEffect:(int)effect view:(UIView *)view time:(float)time delay:(float)delay {
++ (BOOL) animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time delay:(float)delay {
     return [self animEffect:effect view:view time:time delay:delay cbTarget:nil cbSelector:nil cbObject:nil];
 }
-+ (BOOL) animEffect:(int)effect view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
++ (BOOL) animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
     return [self animEffect:effect view:view time:time delay:delay cbTarget:target cbSelector:selector cbObject:nil];
 }
-+ (BOOL) animEffect:(int)effect view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector cbObject:(id)cbObject {
++ (BOOL) animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector cbObject:(id)cbObject {
     SLAnim *anim = [[SLAnim alloc] initWithView:view];
     [anim setDelay:delay];
     [anim setCallbackTarget:target callbackSelector:selector callbackObject:cbObject];

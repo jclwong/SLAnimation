@@ -40,11 +40,11 @@ typedef NS_ENUM(NSUInteger, SLAnimProps) {
 - (void)setTimes:(NSArray *)times;
 
 // Properties: At least 1 need sto be set
-- (void)setProp:(int)prop values:(NSArray *)values;
+- (void)setProp:(NSUInteger)prop values:(NSArray *)values;
 
 // Optional Properties
 - (void)setDelay:(float)aDelay;
-- (void)setAnimationOption:(int)option;
+- (void)setAnimationOption:(NSUInteger)option;
 - (void)setCallbackTarget:(id)callbackTarget callbackSelector:(SEL)callbackSelector;
 - (void)setCallbackTarget:(id)callbackTarget callbackSelector:(SEL)callbackSelector callbackObject:(id)callbackObject;
 
