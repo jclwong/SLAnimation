@@ -20,3 +20,4 @@ end
 # git push --tags
 # pod spec lint SLAnimation.podspec (this is to check validity)
 # pod trunk push SLAnimation.podspec
+
