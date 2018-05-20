@@ -10,6 +10,7 @@
 
 #import <SLAnimation/SLAnim.h>
 #import <SLAnimation/SLAnimUtil.h>
+//#import <SLAnimation/SLAnimation-umbrella.h>
 
 @interface SLAnimationViewController () {
     UIImageView *view;

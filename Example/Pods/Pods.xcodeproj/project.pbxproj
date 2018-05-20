@@ -34,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		062C1D46BF584151DAFD7A421162AB45 /* SLAnimation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SLAnimation-dummy.m"; sourceTree = "<group>"; };
+		0A3B136620B10E1E0010B5EB /* SLAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLAnimation.h; sourceTree = "<group>"; };
 		0EA68CEB9E92AD643DDA0407838FC8C4 /* SLAnim.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SLAnim.h; sourceTree = "<group>"; };
 		1D575C52F77D3C4D2ECFCDFE85331AB3 /* Pods-SLAnimation_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLAnimation_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1DDFDBA9BA098A535426F64892159DB3 /* Pods-SLAnimation_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLAnimation_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 				278CC272D8C87FA198F8302B1C1BEEE2 /* SLAnim.m */,
 				2048BB7B62DEDB7A5214E2A17547A0B0 /* SLAnimUtil.h */,
 				8494EB8AFCC9214C96D13AEB820CDB3A /* SLAnimUtil.m */,
+				0A3B136620B10E1E0010B5EB /* SLAnimation.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
