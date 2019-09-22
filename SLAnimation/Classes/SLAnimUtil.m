@@ -13,19 +13,19 @@
 
 #pragma mark - Animations: Single Property
 
-+ (BOOL) animProp:(NSUInteger)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time {
++ (BOOL)animProp:(NSUInteger)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time {
     return [self animProp:prop animValue:animValue view:view time:time delay:0 cbTarget:nil cbSelector:nil cbObject:nil];
 }
-+ (BOOL) animProp:(NSUInteger)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay {
++ (BOOL)animProp:(NSUInteger)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay {
     return [self animProp:prop animValue:animValue view:view time:time delay:delay cbTarget:nil cbSelector:nil cbObject:nil];
 }
-+ (BOOL) animProp:(NSUInteger)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
++ (BOOL)animProp:(NSUInteger)prop animValue:(NSObject *)animValue view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
     return [self animProp:prop animValue:animValue view:view time:time delay:delay cbTarget:target cbSelector:selector cbObject:nil];
 }
 
-+ (BOOL) animProp:(NSUInteger)prop animValue:(NSObject *)animValue
-             view:(UIView *)view time:(float)time delay:(float)delay
-         cbTarget:(id)target cbSelector:(SEL)selector cbObject:(id)cbObject {
++ (BOOL)animProp:(NSUInteger)prop animValue:(NSObject *)animValue
+            view:(UIView *)view time:(float)time delay:(float)delay
+        cbTarget:(id)target cbSelector:(SEL)selector cbObject:(id)cbObject {
     SLAnim *anim = [[SLAnim alloc] initWithView:view times:@[@(time)]];
     [anim setDelay:delay];
     [anim setCallbackTarget:target callbackSelector:selector callbackObject:cbObject];
@@ -65,16 +65,16 @@
 
 #pragma mark - Animation: Effects
 
-+ (BOOL) animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time {
++ (BOOL)animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time {
     return [self animEffect:effect view:view time:time delay:0 cbTarget:nil cbSelector:nil cbObject:nil];
 }
-+ (BOOL) animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time delay:(float)delay {
++ (BOOL)animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time delay:(float)delay {
     return [self animEffect:effect view:view time:time delay:delay cbTarget:nil cbSelector:nil cbObject:nil];
 }
-+ (BOOL) animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
++ (BOOL)animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector {
     return [self animEffect:effect view:view time:time delay:delay cbTarget:target cbSelector:selector cbObject:nil];
 }
-+ (BOOL) animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector cbObject:(id)cbObject {
++ (BOOL)animEffect:(NSUInteger)effect view:(UIView *)view time:(float)time delay:(float)delay cbTarget:(id)target cbSelector:(SEL)selector cbObject:(id)cbObject {
     SLAnim *anim = [[SLAnim alloc] initWithView:view];
     [anim setDelay:delay];
     [anim setCallbackTarget:target callbackSelector:selector callbackObject:cbObject];
@@ -132,6 +132,10 @@
     } else if (effect == SLA_EFFECT_FADE_UP_OUT) {
         [self fadeUpOut:anim view:view time:time];
 
+    } else if (effect == SLA_EFFECT_BOBBLE_UP) {
+        [self bobbleUp:anim view:view time:time];
+    } else if (effect == SLA_EFFECT_BOBBLE_DOWN) {
+        [self bobbleDown:anim view:view time:time];
     }
     return [anim animate];
 }
@@ -139,7 +143,7 @@
 
 #pragma mark - Shake
 
-+ (SLAnim *) shake:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)shake:(SLAnim *)anim view:(UIView *)view time:(float)time {
     [anim setTimes:@[@(time*0.2), @(time*0.2), @(time*0.2), @(time*0.2), @(time*0.2)]];
     [anim setProp:SLA_PROP_CENTER values:@[[NSValue valueWithCGPoint:view.center],
                                            [NSValue valueWithCGPoint:CGPointMake(view.center.x-15, view.center.y)],
@@ -152,14 +156,14 @@
 
 #pragma mark - Pop
 
-+ (SLAnim *) popIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)popIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
     [anim setTimes:@[@(time*0.8), @(time*0.2)]];
     [anim setProp:SLA_PROP_ALPHA values:@[@0, @1, @1]];
     [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@0.3, @1.1, @1]];
     return anim;
 }
 
-+ (SLAnim *) popOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)popOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
     [anim setTimes:@[@(time*0.2), @(time*0.8)]];
     [anim setProp:SLA_PROP_ALPHA values:@[@1, @1, @0]];
     [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@1, @1.1, @0.3]];
@@ -168,14 +172,14 @@
 
 #pragma mark - Rise
 
-+ (SLAnim *) riseIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)riseIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
     [anim setTimes:@[@(time)]];
     [anim setProp:SLA_PROP_ALPHA values:@[@0, @1]];
     [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@0.3, @1]];
     return anim;
 }
 
-+ (SLAnim *) riseOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)riseOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
     [anim setTimes:@[@(time)]];
     [anim setProp:SLA_PROP_ALPHA values:@[@1, @0]];
     [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@1, @1.7]];
@@ -184,14 +188,14 @@
 
 #pragma mark - Fall
 
-+ (SLAnim *) fallIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)fallIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
     [anim setTimes:@[@(time)]];
     [anim setProp:SLA_PROP_ALPHA values:@[@0, @1]];
     [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@1.7, @1]];
     return anim;
 }
 
-+ (SLAnim *) fallOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)fallOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
     [anim setTimes:@[@(time)]];
     [anim setProp:SLA_PROP_ALPHA values:@[@1, @0]];
     [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@1, @0.3]];
@@ -200,7 +204,7 @@
 
 #pragma mark - Slide Left
 
-+ (SLAnim *) slideLeftIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)slideLeftIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     [anim setTimes:@[@(time)]];
     [anim setAnimationOption:SLA_TIME_EASE_IN];
@@ -209,7 +213,7 @@
     return anim;
 }
 
-+ (SLAnim *) slideLeftOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)slideLeftOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     [anim setTimes:@[@(time)]];
     [anim setAnimationOption:SLA_TIME_EASE_OUT];
@@ -221,7 +225,7 @@
 #pragma mark - Slide Right
 
 
-+ (SLAnim *) slideRightIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)slideRightIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     [anim setTimes:@[@(time)]];
     [anim setAnimationOption:SLA_TIME_EASE_IN];
@@ -231,7 +235,7 @@
     return anim;
 }
 
-+ (SLAnim *) slideRightOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)slideRightOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     [anim setTimes:@[@(time)]];
     [anim setAnimationOption:SLA_TIME_EASE_OUT];
@@ -243,7 +247,7 @@
 
 #pragma mark - Bounce Left
 
-+ (SLAnim *) bounceLeftIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)bounceLeftIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     [anim setTimes:@[@(time*0.8), @(time*0.2)]];
     [anim setProp:SLA_PROP_CENTER values:@[[NSValue valueWithCGPoint:CGPointMake(view.center.x+sWidth, view.center.y)],
@@ -253,7 +257,7 @@
     return anim;
 }
 
-+ (SLAnim *) bounceLeftOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)bounceLeftOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     [anim setTimes:@[@(time*0.2), @(time*0.8)]];
     [anim setProp:SLA_PROP_CENTER values:@[[NSValue valueWithCGPoint:view.center],
@@ -265,7 +269,7 @@
 
 #pragma mark - Bounce Right
 
-+ (SLAnim *) bounceRightIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)bounceRightIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     [anim setTimes:@[@(time*0.8), @(time*0.2)]];
     [anim setProp:SLA_PROP_CENTER values:@[[NSValue valueWithCGPoint:CGPointMake(view.center.x-sWidth, view.center.y)],
@@ -275,7 +279,7 @@
     return anim;
 }
 
-+ (SLAnim *) bounceRightOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)bounceRightOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
     float sWidth = [UIScreen mainScreen].bounds.size.width;
     [anim setTimes:@[@(time*0.2), @(time*0.8)]];
     [anim setProp:SLA_PROP_CENTER values:@[[NSValue valueWithCGPoint:view.center],
@@ -287,7 +291,7 @@
 
 #pragma mark - Unroll Down
 
-+ (SLAnim *) unrollDownIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)unrollDownIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
     CGRect f = view.frame;
     [anim setTimes:@[@(time*0.8), @(time*0.2)]];
     [anim setProp:SLA_PROP_ALPHA values:@[@0, @1, @1]];
@@ -297,7 +301,7 @@
     return anim;
 }
 
-+ (SLAnim *) unrollDownOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)unrollDownOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
     CGRect f = view.frame;
     [anim setTimes:@[@(time*0.2), @(time*0.8)]];
     [anim setProp:SLA_PROP_ALPHA values:@[@1, @1, @0]];
@@ -309,7 +313,7 @@
 
 #pragma mark - Fade Down
 
-+ (SLAnim *) fadeDownIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)fadeDownIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
     CGPoint c = view.center;
     CGSize s = view.frame.size;
     [anim setTimes:@[@(time*0.8), @(time*0.2)]];
@@ -320,7 +324,7 @@
     return anim;
 }
 
-+ (SLAnim *) fadeDownOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)fadeDownOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
     CGPoint c = view.center;
     CGSize s = view.frame.size;
     [anim setTimes:@[@(time*0.2), @(time*0.8)]];
@@ -333,7 +337,7 @@
 
 #pragma mark - Fade Up
 
-+ (SLAnim *) fadeUpIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)fadeUpIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
     CGPoint c = view.center;
     CGSize s = view.frame.size;
     [anim setTimes:@[@(time*0.8), @(time*0.2)]];
@@ -344,7 +348,7 @@
     return anim;
 }
 
-+ (SLAnim *) fadeUpOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
++ (SLAnim *)fadeUpOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
     CGPoint c = view.center;
     CGSize s = view.frame.size;
     [anim setTimes:@[@(time*0.2), @(time*0.8)]];
@@ -354,4 +358,19 @@
                                             [NSValue valueWithCGPoint:CGPointMake(c.x, c.y - s.height/2)]]];
     return anim;
 }
+
+#pragma mark - Bobble
+
++ (SLAnim *)bobbleUp:(SLAnim *)anim view:(UIView *)view time:(float)time {
+    [anim setTimes:@[@(time * 0.2), @(time * 0.8)]];
+    [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@(1), @(1.1), @(1)]];
+    return anim;
+}
+
++ (SLAnim *)bobbleDown:(SLAnim *)anim view:(UIView *)view time:(float)time {
+    [anim setTimes:@[@(time * 0.5), @(time * 0.5)]];
+    [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@(1), @(0.9), @(1)]];
+    return anim;
+}
+
 @end
