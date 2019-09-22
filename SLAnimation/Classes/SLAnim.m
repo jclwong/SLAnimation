@@ -159,11 +159,11 @@
     [UIView animateWithDuration:[[_times objectAtIndex:_currentAnimationStep] doubleValue] delay:0
                         options:(_animationOption | UIViewAnimationOptionAllowUserInteraction)
                      animations:^{
-                         [self animateViewWithPropsAtStep:_currentAnimationStep + 1];
+                         [self animateViewWithPropsAtStep:self->_currentAnimationStep + 1];
                      } completion: ^(BOOL finished) {
-                         _currentAnimationStep++;
+                         self->_currentAnimationStep++;
                          
-                         if (_currentAnimationStep < [_times count]) {
+                         if (self->_currentAnimationStep < [self->_times count]) {
                              [self animationStep];
                              
                          } else {
