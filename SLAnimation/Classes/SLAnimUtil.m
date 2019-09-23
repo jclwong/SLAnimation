@@ -362,14 +362,14 @@
 #pragma mark - Bobble
 
 + (SLAnim *)bobbleUp:(SLAnim *)anim view:(UIView *)view time:(float)time {
-    [anim setTimes:@[@(time * 0.2), @(time * 0.8)]];
-    [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@(1), @(1.1), @(1)]];
+    [anim setTimes:@[@(time * 0.3), @(time * 0.7)]];
+    [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@(1), @(1.2), @(1)]];
     return anim;
 }
 
 + (SLAnim *)bobbleDown:(SLAnim *)anim view:(UIView *)view time:(float)time {
-    [anim setTimes:@[@(time * 0.5), @(time * 0.5)]];
-    [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@(1), @(0.9), @(1)]];
+    [anim setTimes:@[@(time * 0.3), @(time * 0.7)]];
+    [anim setProp:SLA_PROP_TRANSFORM_XY values:@[@(1), @(0.8), @(1)]];
     return anim;
 }
 
