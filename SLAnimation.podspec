@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'SLAnimation'
-  spec.version      = '1.6'
+  spec.version      = '1.6.1'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/jclwong/SLAnimation'
   spec.authors      = { 'jclwong' => 'jackwongau@hotmail.com' }
@@ -11,7 +11,7 @@ Features numerous animatable properties, multi-stage animations, callbacks and s
                       DESC
   spec.source       = { :git => 'https://github.com/jclwong/SLAnimation.git', :tag => spec.version.to_s }
   spec.source_files = 'SLAnimation/Classes/*.{h,m}'
-  spec.ios.deployment_target = '9.3'
+  spec.ios.deployment_target = '9.0'
 end
 
 # ==========[ Update process ]==========
