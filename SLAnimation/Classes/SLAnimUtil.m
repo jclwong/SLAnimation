@@ -122,6 +122,11 @@
     } else if (effect == SLA_EFFECT_UNROLL_DOWN_OUT) {
         [self unrollDownOut:anim view:view time:time];
 
+    } else if (effect == SLA_EFFECT_UNROLL_UP_IN) {
+        [self unrollUpIn:anim view:view time:time];
+    } else if (effect == SLA_EFFECT_UNROLL_UP_OUT) {
+        [self unrollUpOut:anim view:view time:time];
+
     } else if (effect == SLA_EFFECT_FADE_DOWN_IN) {
         [self fadeDownIn:anim view:view time:time];
     } else if (effect == SLA_EFFECT_FADE_DOWN_OUT) {
@@ -308,6 +313,34 @@
     [anim setProp:SLA_PROP_FRAME values: @[[NSValue valueWithCGRect:f],
                      [NSValue valueWithCGRect:CGRectMake(f.origin.x, f.origin.y, f.size.width, f.size.height + f.size.height * 0.05)],
                      [NSValue valueWithCGRect:CGRectMake(f.origin.x, f.origin.y, f.size.width, 0)]]];
+    return anim;
+}
+
+#pragma mark - Unroll Up
+
++ (SLAnim *)unrollUpIn:(SLAnim *)anim view:(UIView *)view time:(float)time {
+    CGRect f = view.frame;
+    float vH = f.size.height;
+    [anim setTimes:@[@(time*0.8), @(time*0.2)]];
+    [anim setProp:SLA_PROP_ALPHA values:@[@0, @1, @1]];
+    [anim setProp:SLA_PROP_FRAME values: @[
+        [NSValue valueWithCGRect:CGRectMake(f.origin.x, vH, f.size.width, 0)],
+        [NSValue valueWithCGRect:CGRectMake(f.origin.x, -(vH * 0.05), f.size.width, vH * 1.05)],
+        [NSValue valueWithCGRect:f],
+    ]];
+    return anim;
+}
+
++ (SLAnim *)unrollUpOut:(SLAnim *)anim view:(UIView *)view time:(float)time {
+    CGRect f = view.frame;
+    float vH = f.size.height;
+    [anim setTimes:@[@(time*0.2), @(time*0.8)]];
+    [anim setProp:SLA_PROP_ALPHA values:@[@1, @1, @0]];
+    [anim setProp:SLA_PROP_FRAME values: @[
+        [NSValue valueWithCGRect:f],
+        [NSValue valueWithCGRect:CGRectMake(f.origin.x, -(vH * 0.05), f.size.width, vH * 1.05)],
+        [NSValue valueWithCGRect:CGRectMake(f.origin.x, vH, f.size.width, 0)],
+    ]];
     return anim;
 }
 
