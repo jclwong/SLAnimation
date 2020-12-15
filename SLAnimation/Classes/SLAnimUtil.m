@@ -339,7 +339,7 @@
     [anim setProp:SLA_PROP_FRAME values: @[
         [NSValue valueWithCGRect:f],
         [NSValue valueWithCGRect:CGRectMake(f.origin.x, -(vH * 0.05), f.size.width, vH * 1.05)],
-        [NSValue valueWithCGRect:CGRectMake(f.origin.x, vH, f.size.width, 0)],
+        [NSValue valueWithCGRect:CGRectMake(f.origin.x, vH, f.size.width, 1)], // 1 because animation bug, 0 instantly disappears
     ]];
     return anim;
 }
