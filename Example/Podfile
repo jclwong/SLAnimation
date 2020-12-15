@@ -7,7 +7,5 @@ target 'SLAnimation_Example' do
 
   target 'SLAnimation_Tests' do
     inherit! :search_paths
-
-    
   end
 end
